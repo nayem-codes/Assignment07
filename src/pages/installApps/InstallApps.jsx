@@ -4,7 +4,7 @@ import { FaPhone, FaVideo } from 'react-icons/fa';
 import { MdMessage } from 'react-icons/md';
 
 const InstallApps = () => {
-    const { InstallApps, setInstallApps } = useContext(CallFriendContext)
+    const { InstallApps } = useContext(CallFriendContext);
 
 
     const actionIcon = {

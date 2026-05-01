@@ -23,7 +23,7 @@ const InstallApps = () => {
     return (
 
         <div>
-            {
+            { InstallApps.length === 0 ? <h2 className='font-bold text-4xl text-center mt-10'>No friend Contacted</h2> :
                 InstallApps.map((friend, ind) => {
                     return <div key={ind} className='container mx-auto mb-4 '>
 

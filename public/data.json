@@ -70,5 +70,30 @@
     "bio": "Tech enthusiast. Loves discussing programming and startups.",
     "goal": 15,
     "next_due_date": "2026-05-03"
+  },
+  
+  {
+    "id": 7,
+    "name": "Sadia Karim",
+    "picture": "https://randomuser.me/api/portraits/women/63.jpg",
+    "email": "sadia.karim@example.com",
+    "days_since_contact": 21,
+    "status": "overdue",
+    "tags": ["family"],
+    "bio": "Close university friend. Loves traveling and photography.",
+    "goal": 14,
+    "next_due_date": "2026-04-12"
+  },
+  {
+    "id": 8,
+    "name": "Mahmudul Hasan",
+    "picture": "https://randomuser.me/api/portraits/men/41.jpg",
+    "email": "mahmudul.hasan@example.com",
+    "days_since_contact": 11,
+    "status": "almost due",
+    "tags": ["work"],
+    "bio": "Worked together on multiple projects. Very reliable teammate.",
+    "goal": 12,
+    "next_due_date": "2026-05-02"
   }
 ]

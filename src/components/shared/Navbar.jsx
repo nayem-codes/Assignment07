@@ -38,7 +38,7 @@ const Navbar = () => {
 
                     <NavLink className={({ isActive }) => `btn flex items-center gap ${isActive ? "bg-green-900 text-white" : "bg-transparent text-black"}`} to={"/installApps"}><CiClock2 />Timeline</NavLink>
 
-                    <NavLink className={({ isActive }) => `btn flex items-center gap ${isActive ? "bg-green-900 text-white" : "bg-transparent text-black"}`} to={"/installApps"}><ImStatsDots /> Stats</NavLink>
+                    <NavLink className={({ isActive }) => `btn flex items-center gap ${isActive ? "bg-green-900 text-white" : "bg-transparent text-black"}`} to={"/dashboard"}><ImStatsDots /> Stats</NavLink>
                 </div>
             </div>
         </div>

@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Aisha Rahman",
+    "picture": "https://randomuser.me/api/portraits/women/12.jpg",
+    "email": "aisha.rahman@example.com",
+    "days_since_contact": 18,
+    "status": "overdue",
+    "tags": ["college"],
+    "bio": "Met during university. Always up for deep talks and coffee.",
+    "goal": 14,
+    "next_due_date": "2026-04-10"
+  },
+  {
+    "id": 2,
+    "name": "Rafi Hasan",
+    "picture": "https://randomuser.me/api/portraits/men/32.jpg",
+    "email": "rafi.hasan@example.com",
+    "days_since_contact": 5,
+    "status": "on-track",
+    "tags": ["college"],
+    "bio": "Old school friend. Plays football every weekend.",
+    "goal": 10,
+    "next_due_date": "2026-05-01"
+  },
+  {
+    "id": 3,
+    "name": "Nusrat Jahan",
+    "picture": "https://randomuser.me/api/portraits/women/45.jpg",
+    "email": "nusrat.jahan@example.com",
+    "days_since_contact": 30,
+    "status": "overdue",
+    "tags": ["work"],
+    "bio": "Former colleague. Great for career advice.",
+    "goal": 20,
+    "next_due_date": "2026-04-05"
+  },
+  {
+    "id": 4,
+    "name": "Imran Chowdhury",
+    "picture": "https://randomuser.me/api/portraits/men/55.jpg",
+    "email": "imran.c@example.com",
+    "days_since_contact": 2,
+    "status": "on-track",
+    "tags": ["family"],
+    "bio": "Gym partner. Keeps me motivated and consistent.",
+    "goal": 7,
+    "next_due_date": "2026-04-28"
+  },
+  {
+    "id": 5,
+    "name": "Farzana Akter",
+    "picture": "https://randomuser.me/api/portraits/women/28.jpg",
+    "email": "farzana.akter@example.com",
+    "days_since_contact": 14,
+    "status": "almost due",
+    "tags": ["family"],
+    "bio": "Cousin. We meet during family gatherings and festivals.",
+    "goal": 14,
+    "next_due_date": "2026-04-26"
+  },
+  {
+    "id": 6,
+    "name": "Tanvir Ahmed",
+    "picture": "https://randomuser.me/api/portraits/men/67.jpg",
+    "email": "tanvir.ahmed@example.com",
+    "days_since_contact": 9,
+    "status": "on-track",
+    "tags": ["work"],
+    "bio": "Tech enthusiast. Loves discussing programming and startups.",
+    "goal": 15,
+    "next_due_date": "2026-05-03"
+  }
+]

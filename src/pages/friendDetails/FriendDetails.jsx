@@ -42,7 +42,7 @@ const FriendDetails = () => {
 
             <div className='max-w-7xl mx-auto px-4 flex flex-col lg:flex-row gap-6 flex-wrap justify-center pt-20 '>
 
-                <div className='left flex flex-col items-center space-y-4 w-full lg:w-[320px] h-full'>
+                <div className='left flex flex-1 flex-col items-center space-y-4 w-full lg:w-[320px] h-full'>
                     <div className='card bg-white w-full shadow-sm p-6 container mx-auto flex flex-col items-center '>
                         <img className='rounded-full' src={expectedFriend.picture} alt="" />
                         <h2 className='card-title'>{expectedFriend.name}</h2>
@@ -57,7 +57,7 @@ const FriendDetails = () => {
 
                 </div>
 
-                <div className='right h-full  space-y-6'>
+                <div className='right flex-2 h-full  space-y-6'>
 
                     <div className="flex gap-2">
                         <div className="card card-border bg-base-100 w-full">
@@ -92,7 +92,7 @@ const FriendDetails = () => {
 
                     <div className="card card-border bg-base-100 w-full flex flex-col item-center">
                         <div className="card-body">
-                            <p>Quick Check-In</p>
+                            <p className='text-xl font-medium text-green-900'>Quick Check-In</p>
 
                             <div className='grid grid-cols-3 gap-3'>
 

@@ -26,22 +26,28 @@ const Dashboard = () => {
     ];
 
     return (
-        <div className='flex justify-center my-10 shadow rounded-md border border-slate-300 container mx-auto h-100'>
+        <div>
+            <h2 className='font-bold text-5xl pt-14 mb-6 container mx-auto'>Friendship Analytics</h2>
+            <div className='my-10 shadow rounded-md border border-slate-300 container mx-auto'>
+                <p className='text-xl font-medium text-green-900 w-full p-6'>By Interaction Type</p>
+            <div className='flex justify-center h-100'>
+                
+                <ResponsiveContainer width="100%" height="100%">
+                    <PieChart>
+                        <Pie
+                            data={data}
+                            cx="50%"
+                            cy="50%"
+                            innerRadius={60}
+                            outerRadius={80}
+                            dataKey="value"
+                        />
+                        <Legend />
+                    </PieChart>
+                </ResponsiveContainer>
 
-            <ResponsiveContainer width="100%" height="100%">
-                <PieChart>
-                    <Pie
-                        data={data}
-                        cx="50%"
-                        cy="50%"
-                        innerRadius={60}
-                        outerRadius={80}
-                        dataKey="value"
-                    />
-                    <Legend/>
-                </PieChart>
-            </ResponsiveContainer>
-
+            </div>
+            </div>
         </div>
     );
 };

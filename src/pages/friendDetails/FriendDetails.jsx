@@ -3,6 +3,11 @@ import { useParams } from 'react-router';
 import useFriends from '../../hooks/useFriends';
 import { CallFriendContext } from '../../context/CallFriendContext';
 import InstallApps from '../installApps/InstallApps';
+import { FaPhone, FaVideo } from 'react-icons/fa';
+import { MdMessage } from 'react-icons/md';
+import { RiDeleteBin6Line, RiNotificationSnoozeLine } from 'react-icons/ri';
+import { IoArchiveOutline } from 'react-icons/io5';
+import { toast } from 'react-toastify';
 
 const FriendDetails = () => {
 
@@ -27,47 +32,50 @@ const FriendDetails = () => {
     };
 
 
-    setInstallApps([...InstallApps, newData])
+    setInstallApps([...InstallApps, newData]);
+
+    toast.success(`${newData.action}ed ${expectedFriend.name}`)
    }
 
     return (
-        <div className='bg-base-200'>
+        <div className='bg-base-200 min-h-screen'>
 
-            <div className='flex gap-6 bg-base-200 container mx-auto'>
+            <div className='max-w-7xl mx-auto px-4 flex flex-col lg:flex-row gap-6 flex-wrap justify-center pt-20 '>
 
-                <div className='left container mx-auto flex flex-col items-center space-y-2 w-87.5'>
-                    <div className='card bg-white w-96 shadow-sm p-6 container mx-auto flex flex-col items-center '>
+                <div className='left flex flex-col items-center space-y-4 w-full lg:w-[320px] h-full'>
+                    <div className='card bg-white w-full shadow-sm p-6 container mx-auto flex flex-col items-center '>
                         <img className='rounded-full' src={expectedFriend.picture} alt="" />
                         <h2 className='card-title'>{expectedFriend.name}</h2>
-                        <span className={`text-white  py-3.5 font-semibold ${expectedFriend.status === "overdue" ? "badge badge-error" : expectedFriend.status === "almost due" ? "badge badge-warning" : "badge bg-green-900"}`}>{expectedFriend.status}</span>
+                        <span className={`text-white  py-3.5 font-semibold my-2 ${expectedFriend.status === "overdue" ? "badge badge-error" : expectedFriend.status === "almost due" ? "badge badge-warning" : "badge bg-green-900 "}`}>{expectedFriend.status}</span>
                         <span className='badge py-3.5 font-semibold bg-green-200 text-green-900'>{expectedFriend.tags}</span>
+                        <p className='text-center text-gray-500 mt-3'>{expectedFriend.bio}</p>
                     </div>
 
-                    <button className='btn bg-white w-full'>Snooze 2 weeks</button>
-                    <button className='btn bg-white w-full'>Archive</button>
-                    <button className='btn bg-white w-full'>Delete</button>
+                    <button className='btn bg-white w-full'><RiNotificationSnoozeLine /> Snooze 2 weeks</button>
+                    <button className='btn bg-white w-full'><IoArchiveOutline /> Archive</button>
+                    <button className='btn bg-white w-full text-red-500'><RiDeleteBin6Line /> Delete</button>
 
                 </div>
 
-                <div className='right'>
+                <div className='right h-full  space-y-6'>
 
                     <div className="flex gap-2">
-                        <div className="card card-border bg-base-100 w-96 flex flex-col item-center">
-                            <div className="card-body">
-                                <h2 className="card-title">{expectedFriend.days_since_contact}</h2>
+                        <div className="card card-border bg-base-100 w-full">
+                            <div className="card-body flex flex-col items-center">
+                                <h2 className="card-title font-semibold text-3xl text-green-900">{expectedFriend.days_since_contact}</h2>
                                 <p>Days Since Contact</p>
                             </div>
                         </div>
-                        <div className="card card-border bg-base-100 w-96">
-                            <div className="card-body">
-                                <h2 className="card-title">{expectedFriend.days_since_contact}</h2>
-                                <p>Days Since Contact</p>
+                        <div className="card card-border bg-base-100 w-full">
+                            <div className="card-body flex flex-col items-center">
+                                <h2 className="card-title font-semibold text-3xl text-green-900">{expectedFriend.goal}</h2>
+                                <p>Goal (Days)</p>
                             </div>
                         </div>
-                        <div className="card card-border bg-base-100 w-96">
-                            <div className="card-body">
-                                <h2 className="card-title">{expectedFriend.days_since_contact}</h2>
-                                <p>Days Since Contact</p>
+                        <div className="card card-border bg-base-100 w-full">
+                            <div className="card-body flex flex-col items-center">
+                                <h2 className="card-title font-semibold text-3xl text-green-900">{expectedFriend.next_due_date}</h2>
+                                <p>Next Due</p>
                             </div>
                         </div>
                     </div>
@@ -75,10 +83,10 @@ const FriendDetails = () => {
                     <div className="card card-border bg-base-100 w-full flex flex-col item-center">
                         <div className="card-body">
                             <div className='flex justify-between'>
-                                <h2 className="card-title">Relationship Goal</h2>
+                                <h2 className="card-title text-green-900 font-medium">Relationship Goal</h2>
                                 <button className='btn'>Edit</button>
                             </div>
-                            <p>Connect every 30 days</p>
+                            <p>Connect every <span className='font-bold'>30 days</span></p>
                         </div>
                     </div>
 
@@ -86,11 +94,11 @@ const FriendDetails = () => {
                         <div className="card-body">
                             <p>Quick Check-In</p>
 
-                            <div className='flex gap-2'>
+                            <div className='grid grid-cols-3 gap-3'>
 
-                                <button onClick={()=> handleAction("call", expectedFriend)} className='btn'>Call</button>
-                                <button onClick={()=> handleAction("text", expectedFriend)} className='btn'>Text</button>
-                                <button onClick={()=> handleAction("video", expectedFriend)} className='btn'>Video</button>
+                                <button onClick={()=> handleAction("call", expectedFriend)} className='btn flex flex-col p-4 w-full h-auto    '><FaPhone /> Call</button>
+                                <button onClick={()=> handleAction("text", expectedFriend)} className='btn flex flex-col p-4 w-full h-auto'><MdMessage /> Text</button>
+                                <button onClick={()=> handleAction("video", expectedFriend)} className='btn flex flex-col p-4 w-full h-auto'><FaVideo />Video</button>
                             </div>
 
                         </div>

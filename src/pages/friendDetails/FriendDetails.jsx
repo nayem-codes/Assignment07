@@ -49,6 +49,7 @@ const FriendDetails = () => {
                         <span className={`text-white  py-3.5 font-semibold my-2 ${expectedFriend.status === "overdue" ? "badge badge-error" : expectedFriend.status === "almost due" ? "badge badge-warning" : "badge bg-green-900 "}`}>{expectedFriend.status}</span>
                         <span className='badge py-3.5 font-semibold bg-green-200 text-green-900'>{expectedFriend.tags}</span>
                         <p className='text-center text-gray-500 mt-3'>{expectedFriend.bio}</p>
+                        <p className='text-center text-gray-500 mt-3'>Email: {expectedFriend.email}</p>
                     </div>
 
                     <button className='btn bg-white w-full'><RiNotificationSnoozeLine /> Snooze 2 weeks</button>
